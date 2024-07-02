@@ -4,8 +4,7 @@ const Footer = () => {
         <div className="mt-5 xl:mt-12 mx-auto w-full relative text-center text-white">
         <div className="px-6 py-8 md:py-14 xl:pt-20 xl:pb-12">
             <h2 className="font-bold text-3xl xl:text-4xl leading-snug">
-                Ready to get your productivity backStart your free trial today.
-            </h2>
+            Discover the heartbeat of the crypto market: real-time updates from 24-hour trades to year-long movements.            </h2>
             <a className="mt-8 xl:mt-12 px-12 py-5 text-lg font-medium leading-tight inline-block bg-blue-800 rounded-full shadow-xl border border-transparent hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-sky-999 focus:ring-sky-500"
                 href="#">Getstarted</a>
             <div className="mt-14 xl:mt-20">

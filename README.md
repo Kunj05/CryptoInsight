@@ -16,7 +16,7 @@ Here I plan to build an app to track the crypto currency and plot their graph. U
 <hr/>
 <hr />
 
-#### check out the deployed project :https://coin-stats-tracker.vercel.app/
+#### check out the deployed project :https://cryptosinsights.vercel.app/
 ## :fire: Features
 
 :white_check_mark: Clean interface  \
