@@ -30,10 +30,10 @@ const watchlistSlice = createSlice({
 
 export const { setWatchlist, setLoading, setError } = watchlistSlice.actions;
 
-export const fetchWatchlist = (userId) => async (dispatch) => {
+export const fetchWatchlist = (email) => async (dispatch) => {
     try {
         dispatch(setLoading(true));
-        const coinRef = doc(db, 'watchlist', userId);
+        const coinRef = doc(db, 'watchlist',email);
         const unsubscribe = onSnapshot(coinRef, (snapshot) => {
             if (snapshot.exists()) {
                 dispatch(setWatchlist(snapshot.data().coins));

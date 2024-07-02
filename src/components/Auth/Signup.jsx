@@ -1,13 +1,11 @@
-import { createUserWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
+import {GoogleAuthProvider, createUserWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import { useState } from 'react'
-import { auth, provider } from '../../firebase';
+import { auth } from '../../firebase';
 import { useDispatch } from 'react-redux';
 import { setactiveuser } from '../../redux/userSlice';
-// import { eyeOff } from 'react-icons-kit/feather/eyeOff';
-// import { eye } from 'react-icons-kit/feather/eye'
 import { LuEyeOff,LuEye  } from "react-icons/lu";
 
-const Signup = (closemodal) => {
+const Signup = ({closemodal}) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
@@ -16,7 +14,7 @@ const Signup = (closemodal) => {
     const dispatch = useDispatch();
     const handlesubmit = async () => {
         if (password !== confirmPassword) {
-            alert("passwords do not match.");
+            alert("Passwords do not match.");
             return;
         }
         try {
@@ -31,11 +29,15 @@ const Signup = (closemodal) => {
     }
     const handlegooglesignin = async () => {
         try {
+            const provider=new GoogleAuthProvider();
+            //console.log("1");
             const result = await signInWithPopup(auth, provider);
             console.log(result);
             dispatch(setactiveuser({
-                user: result.user
+                accessToken: result.user.accessToken, 
+                email: result.user.email
             }))
+            console.log(result);
             alert('Google sign-in successful');
             closemodal();
         }
@@ -54,7 +56,7 @@ const Signup = (closemodal) => {
                 <div className='w-full '>
                     <input type={type} placeholder='  Enter password' className='w-full text-black' onChange={(e) => setPassword(e.target.value)} />
                 </div>
-                <div style={{ position: "absolute", right: 9, top: -3, filter: "invert(100%)" }} onClick={handleToggle}>
+                <div style={{ position: "absolute", right: 9, top: 12, filter: "invert(100%)" }} onClick={handleToggle}>
                     {type==="password"?<LuEyeOff/>:<LuEye/>}
                 </div>
             </div>

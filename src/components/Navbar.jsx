@@ -5,6 +5,7 @@ import Select from 'react-select';
 import { setCurrency } from '../redux/currencySlice';
 import { selectuser, setlogoutuser } from '../redux/userSlice';
 import { auth } from '../firebase';
+import {toast} from 'react-hot-toast'
 
 const Navbar = ( {openmodal} ) => {
     const options = [
@@ -14,17 +15,18 @@ const Navbar = ( {openmodal} ) => {
     
     const dispatch = useDispatch();
     const user = useSelector(selectuser)
-    console.log(user);
+    console.log('user',user);
     const handleCurrencyChange = (e) => {
         dispatch(setCurrency(e.value));
     }
     const handlelogout = ()=>{
         try{
             auth.signOut()
+            toast.success("Successfully logout");
             dispatch(setlogoutuser())
         }
         catch(error){
-            alert(error.message);
+            toast.error(error);
         }
     }
     return (
@@ -38,7 +40,7 @@ const Navbar = ( {openmodal} ) => {
                     className='text-black font-bold'
                 />
                 {
-                    user ? 
+                    user && user.accessToken  ? 
                     <button onClick={handlelogout}>Logout</button>
                     :
                     <button onClick={openmodal}>Login</button>

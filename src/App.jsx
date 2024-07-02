@@ -5,8 +5,8 @@ import Navbar from './components/Navbar'
 import Coin from './pages/Coin'
 import { useState ,Suspense,lazy } from 'react'
 import "./App.css"
-import Footer from './components/Footer'
-
+import Modal from './components/Modal'
+import {Toaster} from 'react-hot-toast'
 const Home = lazy(() => import('./pages/Home'));
 
 const App = () => {
@@ -24,22 +24,23 @@ const App = () => {
     <Provider store={store}>
         <div className='w-screen h-screen bg-[#14161a]'>
             <Navbar openmodal={openmodal} />
-                <Routes>
-                    <Route exact path="/" element={
-                        <Suspense fallback={<div>Loading...</div>}>
-                            <Home />
-                        </Suspense>
-                        }>
-                    </Route>
+            <Routes>
+                <Route exact path="/" element={
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <Home />
+                    </Suspense>
+                    }>
+                </Route>
 
-                    <Route exact path="/coins/:id" element={
-                        <Suspense fallback={<div>Loading...</div>}>
-                            <Coin />
-                        </Suspense>
-                        }>
-                    </Route>
-                </Routes>
-            <Footer/>
+                <Route exact path="/coins/:id" element={
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <Coin />
+                    </Suspense>
+                    }>
+                </Route>
+            </Routes>
+            {modal && <Modal openmodal={openmodal} closemodal={closemodal} />}
+            <Toaster />
         </div>
     </Provider>
   )

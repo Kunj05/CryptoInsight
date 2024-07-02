@@ -1,13 +1,17 @@
 
-import  { useState } from 'react';
+import  { useEffect, useState } from 'react';
 import Login from './Auth/Login';
 import Signup from './Auth/Signup';
 
-const Modal = ( openmodal, closemodal ) => {
+const Modal = ({ openmodal, closemodal }) => {
     const [activeTab, setActiveTab] = useState('login');
     const handleTabChange = (tab) => {
         setActiveTab(tab);
     };
+    useEffect(()=>{
+        console.log(activeTab);
+    })
+    
     return (
         <div className="modal">
             <div onClick={closemodal} className="overlay"></div>

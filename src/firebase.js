@@ -1,12 +1,11 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, GoogleAuthProvider } from "firebase/auth"
+import { getAuth, } from "firebase/auth"
 import { getFirestore } from "firebase/firestore"
 import firebaseConfig from './config/firebaseConfig';
 
-const firebaseApp = initializeApp(firebaseConfig)
+const app = initializeApp(firebaseConfig)
 
-const auth = getAuth(firebaseApp);
-const provider = new GoogleAuthProvider();
-const db = getFirestore(firebaseApp)
+const auth = getAuth();
+const db = getFirestore(app)
 
-export { auth, db , provider}
+export { auth, db }
