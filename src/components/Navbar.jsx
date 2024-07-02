@@ -29,7 +29,7 @@ const Navbar = ( {openmodal} ) => {
     }
     return (
         <ul className='flex gap-[15vw] sm:gap-[35vw] md:gap-[50vw] justify-evenly    bg-[#14161a] p-2 top-0 items-center w-full sticky nav z-[1]'>
-            <Link className='font-bold text-[#87CEEB]' to="/">CryptoPulse</Link>
+            <Link className='font-bold text-[#87CEEB]' to="/">CryptoInsight</Link>
             <div className='flex text-white gap-[1vw]'>
                 <Select
                     options={options}
