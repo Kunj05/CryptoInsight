@@ -57,14 +57,14 @@ const Table = () => {
                 <tbody className='w-full'>
                     {arr?.filter((coin)=>coin.name.toLowerCase().includes(searchquery) || coin.symbol.toLowerCase().includes(searchquery)).slice(page * 10 - 10, page * 10).map((coin) => (
                         <tr onClick={() => clicked(coin.id)} className='py-3 text-xs vs:text-base w-full flex  hover:bg-[#87CEEB] text-[#FAF0E6] hover:font-bold hover:text-black rounded-md cursor-pointer' key={coin.id}>
-                            <td className='flex items-center p-2 w-[38%] sm:w-[42%]  '>
+                            <td className='flex items-center p-2 w-[38%] sm:w-[42%] '>
                                 <img className='h-10 pr-2 ' src={coin.image} alt="" />
                                 <div className='flex flex-col'>
                                     <button className='font-bold'>{coin.name}</button>
                                     <button className='text-xs text-left'>{coin.symbol}</button>
                                 </div>
                             </td>
-                            <td className='p-2 w-[26%] sm:w-[20%] text-center'><button>{currency==='usd'?"$":"₹"}{coin.current_price.toLocaleString()}</button></td>
+                            <td className='p-2 w-[26%] sm:w-[20%] text-center '><button>{currency==='usd'?"$":"₹"}{coin.current_price.toLocaleString()}</button></td>
                             <td className={`${getclass(coin.price_change_percentage_24h)} p-2 w-[10%] sm:w-[18%] text-center`}>
                                 <button>{coin.price_change_percentage_24h.toFixed(2)} %</button>
                             </td>
@@ -78,10 +78,10 @@ const Table = () => {
                 {
                     len > 0 &&
                     [...Array(len)].map((val, i) => {
-                        return <span key={i} className={`${page === i + 1 ? "bg-[#87CEEB] text-black" : "text-[#FAF0E6]"} cursor-pointer hover:bg-[#87CEEB] hover:text-black  rounded-full w-[20px] sm:w-[25px] flex justify-center items-center`} onClick={() => setthispage(i + 1)}>{i + 1}</span>
+                        return <span key={i} className={`${page === i + 1 ? "bg-[#87CEEB] text-black" : "text-[#FAF0E6]"} cursor-pointer hover:bg-[#87CEEB] hover:text-black  rounded-full w-[20px] sm:w-[25px] flex justify-center items-center text-2xl`} onClick={() => setthispage(i + 1)}>{i + 1}</span>
                     })
                 }
-                <span onClick={() => setthispage(page + 1)} className={page < len ? "cursor-pointer flex items-center" : "opacity-0"}><FaCircleChevronRight />
+                <span onClick={() => setthispage(page + 1)} className={page < len ? "cursor-pointer flex items-center text-2xl" : "opacity-0"}><FaCircleChevronRight />
                 </span>
             </div>
         </div>
