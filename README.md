@@ -1,5 +1,5 @@
 <h1 align="center">
-Coin-Stats
+CoinInsight
 </h1>
 
 <h2 align="center">
@@ -11,17 +11,18 @@ Here I plan to build an app to track the crypto currency and plot their graph. U
 </p>
 
 
-<img src="crypto1.png">
 <img src="crypto2.png">
 <img src="crypto3.png">
+<img src="crypto1.png">
 <hr/>
 <hr />
 
 #### check out the deployed project :https://cryptosinsights.vercel.app/
 ## :fire: Features
 
-:white_check_mark: Clean interface  \
 :white_check_mark: Easy to Navigate dashboard \
+:white_check_mark: make watchlist of our coin \
+:white_check_mark: Clean interface  \
 :white_check_mark: No reloading of whole page \
 :white_check_mark: Fine charts from Chart.js \
 :white_check_mark: Latest updates of all crypto at your fingertips  \
