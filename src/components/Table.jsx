@@ -43,9 +43,9 @@ const Table = () => {
     return (
         
         <div className='flex items-center flex-col w-[95vw] sm:w-[85vw] md:w-[80vw] '>
-            <div className='w-full p-4 text-center pb-0 lg:text-2xl md:text-lg sm:text-base font-bold text-[#FAF0E6]'>Cryptocurrency Prices by Market Cap</div>
+            <div className='w-full p-4 text-center pb-0 lg:text-4xl md:text-lg sm:text-base font-bold text-[#FAF0E6]'>Cryptocurrency Prices by Market Cap</div>
             <input className='w-full rounded-md bg-[#14161a] p-2 border-slate-600 text-white border-2 m-4' type="search" name="serach" id="" placeholder=' Search for a Crypto Coin' onChange={(e)=>setsearchquery(e.target.value)}/>
-            <table className='w-full flex flex-col gap-[10px]'>
+            <table className='w-full flex flex-col gap-[10px] '>
                 <thead className='w-full'>
                     <tr className='flex w-full justify-around bg-[#87CEEB] rounded-md text-sm sm:text-base '>
                         <th className='p-2 sm:w-[42%]  justify-start text-left pl-[1.7vw] font-bold text-black'>Coin</th>
@@ -56,7 +56,7 @@ const Table = () => {
                 </thead>
                 <tbody className='w-full'>
                     {arr?.filter((coin)=>coin.name.toLowerCase().includes(searchquery) || coin.symbol.toLowerCase().includes(searchquery)).slice(page * 10 - 10, page * 10).map((coin) => (
-                        <tr onClick={() => clicked(coin.id)} className='py-3 text-xs vs:text-base w-full flex  hover:bg-[#87CEEB] text-[#FAF0E6] hover:font-bold hover:text-black rounded-md cursor-pointer' key={coin.id}>
+                        <tr onClick={() => clicked(coin.id)} className='py-3 text-6xs vs:text-base w-full flex  hover:bg-[#87CEEB] text-[#FAF0E6] hover:font-bold hover:text-black rounded-md cursor-pointer' key={coin.id}>
                             <td className='flex items-center p-2 w-[38%] sm:w-[42%] '>
                                 <img className='h-10 pr-2 ' src={coin.image} alt="" />
                                 <div className='flex flex-col'>

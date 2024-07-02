@@ -35,7 +35,7 @@ const Carousel = () => {
 
     return (
         <div className='Carouselimg flex-col items-center justify-center'>
-            <h1 className='text-center text-3xl sm:text-5xl p-4 font-bold text-[#87CEEB]'>CryptoInsight
+            <h1 className='text-center text-5xl sm:text-5xl p-4 font-bold text-[#87CEEB]'>CryptoInsight
             </h1>
             <p className='text-center text-sm text-[#87CEEB]'>Get All The Info Regarding Your Favorite Crypto Currency</p>
             <AliceCarousel

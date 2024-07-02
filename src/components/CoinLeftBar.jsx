@@ -93,7 +93,7 @@ const CoinLeftBar = () => {
                     user ? (
                         <button
                             onClick={inWatchlist ? handleRemoveFromWatchlist : handleAddToWatchlist}
-                            className="text-center text-black px-2 py-1 w-[60%] text-lg flex justify-start bg-green-500 border border-black rounded-md"
+                            className="text-center text-black px-2 py-1 w-[60%] text-lg flex justify-start ${inWatchlist ? 'bg-red-500' : 'bg-green-500'} border border-black rounded-md"
                             style={{ width: '60%', textAlign: 'center' }}
                         >
                             {inWatchlist ? "Remove from Watchlist" : "Add to Watchlist"}
