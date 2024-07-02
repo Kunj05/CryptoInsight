@@ -11,8 +11,9 @@ Here I plan to build an app to track the crypto currency and plot their graph. U
 </p>
 
 
-<img src="ssh.jpg">
-<img src="2ss.jpg">
+<img src="crypto1.png">
+<img src="crypto2.png">
+<img src="crypto3.png">
 <hr/>
 <hr />
 
